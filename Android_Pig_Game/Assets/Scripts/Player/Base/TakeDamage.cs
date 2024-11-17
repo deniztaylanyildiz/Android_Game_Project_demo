@@ -5,7 +5,7 @@ public abstract class TakeDamage : MonoBehaviour,ITakeDamage
     public int CurrentHP;
     public int _maxHp { get; private set; } = 3;
 
-
+    
     public int CurrentScore { get; private set; }=0;
 
 
@@ -32,7 +32,7 @@ public abstract class TakeDamage : MonoBehaviour,ITakeDamage
 
     public void LoseScore(int Score)
     {
-        if(CurrentScore>=0)
+        if(CurrentScore>0)
             CurrentScore -= Score;
     }
 }
