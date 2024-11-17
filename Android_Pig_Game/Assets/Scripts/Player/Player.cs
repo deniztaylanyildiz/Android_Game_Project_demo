@@ -8,7 +8,13 @@ public class Player :TakeDamage
 
     private void Awake()
     {
+
+
+     
+            CurrentHP = _maxHp;
         
+       
+
 
         if (Instance != null && Instance != this)
         {

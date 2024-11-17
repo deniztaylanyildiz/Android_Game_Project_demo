@@ -2,28 +2,22 @@ using UnityEngine;
 
 public abstract class TakeDamage : MonoBehaviour,ITakeDamage
 {
-    [SerializeField]
-    private int _maxHp;
     public int CurrentHP;
-
-    public int CurrentScore;
-
+    public int _maxHp { get; private set; } = 3;
 
 
+    public int CurrentScore { get; private set; }=0;
 
-    private void Awake()
-    {
-        CurrentHP = _maxHp;
 
-    }
 
+  
 
     public void TakenDamage(int Damage)
     {
         CurrentHP -= Damage;
     }
 
-    public void TakeScore(int Score)
+    public void GainScore(int Score)
     {
         CurrentScore += Score;
     }
@@ -34,5 +28,11 @@ public abstract class TakeDamage : MonoBehaviour,ITakeDamage
             CurrentHP += HP;
         
 
+    }
+
+    public void LoseScore(int Score)
+    {
+        if(CurrentScore>=0)
+            CurrentScore -= Score;
     }
 }
