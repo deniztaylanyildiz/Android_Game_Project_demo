@@ -1,7 +1,7 @@
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Player :TakeDamage
+public class Player :CanPlay
 {
 
     public static Player Instance { get; private set; }

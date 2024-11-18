@@ -1,6 +1,6 @@
 using UnityEngine;
 
-public abstract class TakeDamage : MonoBehaviour,ITakeDamage
+public abstract class CanPlay : MonoBehaviour, ICanPlay
 {
     public int CurrentHP;
     public int _maxHp { get; private set; } = 3;
