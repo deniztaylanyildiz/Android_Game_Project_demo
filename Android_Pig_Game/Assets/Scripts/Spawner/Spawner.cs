@@ -51,11 +51,22 @@ public class Spawner : MonoBehaviour
 
         }
     }
+    public void SpawnDeadCheck()
+    {
+       
+        if(!_isCanSpawn )
+            _isCanSpawn= true;
+
+
+    }
+
+
+
 
     IEnumerator SpawnRoutine(float Timer)
     {
        
-        yield return new WaitForSeconds(Timer);
+        yield return new WaitForSecondsRealtime(Timer);
       _isCanSpawn= true;
 
 

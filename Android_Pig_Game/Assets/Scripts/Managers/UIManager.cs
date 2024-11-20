@@ -1,3 +1,4 @@
+using Unity.VisualScripting;
 using UnityEngine;
 using UnityEngine.Rendering.Universal;
 using UnityEngine.UI;
@@ -5,7 +6,7 @@ using UnityEngine.UI;
 public class UIManager : MonoBehaviour
 {
     [SerializeField] private Text _scoreText;
-
+    [SerializeField] private GameObject _gameOverCanvas;
     public static UIManager Instance { get; private set; }
 
     private void Awake()
@@ -40,11 +41,25 @@ public class UIManager : MonoBehaviour
     }
 
 
-   
+    public void GameManagerHelper()
+    {
+        _gameOverCanvas.SetActive(true);
+    }
+
+    public void ButtonExit()
+    {
+        Application.Quit();
+    }
+
+    public void ButtonTryAgain()
+    {
+
+        GameManager.Instance.CanvasHelper();
+        _gameOverCanvas.SetActive(false);
+    }
 
 
 
-    
 
 
 }
